@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "idun-blue",
+  "version": "4.16.0",
+  "description": "Operate one creator’s Idun Blue workspace — courses, pages, offers, email — through the live MCP server, with the operating manual installed as a skill.",
+  "author": {
+    "name": "Idunblue AB",
+    "url": "https://idun.blue"
+  },
+  "homepage": "https://idun.blue",
+  "repository": "https://github.com/idunblue/idun-blue-plugin",
+  "license": "UNLICENSED",
+  "keywords": [
+    "idun",
+    "creator",
+    "courses",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Idun Blue",
+        "shortDescription": "Operate an Idun Blue creator workspace",
+        "longDescription": "Courses, pages, offers, email sequences and launches in one creator’s Idun Blue workspace, through the live MCP server, with the operating manual installed as a skill.",
+        "developerName": "Idunblue AB",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive",
+          "Write"
+        ],
+        "websiteURL": "https://idun.blue",
+        "defaultPrompt": [
+          "Skapa ett erbjudande, en säljsida och en välkomstsekvens för min workshop",
+          "Read my Idun workspace manifest and tell me what is live"
+        ]
+      }
+    }
+  }
+}
