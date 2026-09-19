@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Idun Blue for Claude Code and Codex",
-    "version": "4.14.0"
+    "version": "4.15.0"
   },
   "plugins": [
     {
       "name": "idun-blue",
       "source": "./",
       "description": "Operate one creator’s Idun Blue workspace — courses, pages, offers, email — through the live MCP server, with the operating manual installed as a skill.",
-      "version": "4.14.0"
+      "version": "4.15.0"
     }
   ]
 }

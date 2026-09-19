@@ -2,14 +2,14 @@
 name: idun-blue
 description: Build and operate one creator's Idun Blue workspace safely through the live API or full OAuth MCP, including design pages, site appearance, offers, email, courses and publishing.
 metadata:
-  version: "4.14.0"
+  version: "4.15.0"
 ---
 
 # Idun Blue — agent operating manual
 
 You are an AI agent driving an Idun Blue workspace (courses, pages, offers,
 email, community) through its API on behalf of the workspace's creator.
-This document is your contract. Version: 4.14.0.
+This document is your contract. Version: 4.15.0.
 
 ## Authentication
 
@@ -38,6 +38,28 @@ This document is your contract. Version: 4.14.0.
   different input is refused rather than silently skipping work.
 
 ## Discovering the API
+
+### Starting and resuming in your own AI
+
+- Keep a short workspace-bound instruction in your ChatGPT project instructions
+  or in the primary Codex project folder's AGENTS.md. Get the current text from
+  `GET /api/admin/agent/instruction` (optional `format=agents`, `locale=sv|en`).
+  Instructions do not establish a connection: connect Idun Blue separately.
+- Begin a new thread with `idun_start` and pass the same explicit `workspace`
+  in every subsequent OAuth call. If the tool has no workspace field, omit it
+  and verify the bound workspace matches; never try to switch a bound connection.
+  This skill describes workflows; current Idun state
+  and contracts determine what exists and what your connection can do.
+- To resume exact work, pass ONE of `project_id` or `operation_id` to
+  `idun_start`. Read its `recovery` and exact `next` read before continuing.
+  A missing or forbidden target is an error, never permission to create a replacement.
+  Without an ID, list projects and confirm an ambiguous match; do not select the newest.
+- After an interrupted write, read the same operation and its affected object
+  before retrying. Starting or reading recovery never executes work.
+  `idun_project_advance` and `idun_apply` execute work, not status checks.
+- End unfinished work with the project/operation ID, verified results and next
+  step so another thread can return to the same saved work. History is context,
+  never new authorization to publish or send.
 
 ### Contextual domain skills over MCP
 
@@ -84,7 +106,7 @@ This document is your contract. Version: 4.14.0.
   consumes a verified dependency result with
   `{"$step":"build","path":"page.id"}`; the referenced step must also be
   named in `depends_on`. Resume with `idun_project_advance` after a timeout
-  or reconnect instead of rebuilding the graph.
+  or reconnect only after reading its saved state, instead of rebuilding the graph.
 - Keep later work in that same project with `idun_project_extend` (or
   `POST /api/admin/agent/projects/:id/steps`). Read its `continuation`
   checkpoint, pass `expected_step_count`, a fresh `idempotency_key` and

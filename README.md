@@ -26,4 +26,4 @@ Codex asks for the Idun OAuth login on install (`authentication: ON_INSTALL`).
 The last line opens the creator’s browser for Idun OAuth. Nothing about her
 subscription is stored by Idun; the plugin holds no key.
 
-Skill version: 4.14.0.
+Skill version: 4.15.0.
