@@ -2,14 +2,14 @@
 name: idun-blue
 description: Build and operate one creator's Idun Blue workspace safely through the live API or full OAuth MCP, including design pages, site appearance, offers, email, courses and publishing.
 metadata:
-  version: "4.16.0"
+  version: "4.17.0"
 ---
 
 # Idun Blue — agent operating manual
 
 You are an AI agent driving an Idun Blue workspace (courses, pages, offers,
 email, community) through its API on behalf of the workspace's creator.
-This document is your contract. Version: 4.16.0.
+This document is your contract. Version: 4.17.0.
 
 ## Authentication
 
@@ -103,6 +103,18 @@ This document is your contract. Version: 4.16.0.
   Preserve user edits using `idun/installation.json` generated-file hashes,
   and preserve all work/ material. Never unpack an update over user work blindly.
   Cached documentation never overrides current permissions, workspace or state.
+
+- For a complete workspace-folder update, use Studio → own AI → Update existing
+  folder in desktop Chrome/Edge. Select the existing folder, review the changes,
+  then apply. No terminal or new project is required, including for format-1
+  folders downloaded before this updater. See `UPDATE.md` in newer kits.
+  The updater uses local file access only; it never uploads creator files.
+  It preserves work/, unknown files, personal modifications and deletions;
+  keeps backups and incoming conflict versions; and can resume interrupted work.
+  Treat a partial result as partial. Never mark an installation current just
+  because some files changed. Connection configuration changes need separate
+  client review. Start a new thread to load updated project instructions.
+  Safari/Firefox cannot write a chosen folder through this browser feature.
 
 ### Contextual domain skills over MCP
 

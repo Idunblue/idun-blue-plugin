@@ -48,6 +48,11 @@ In Studio's own-AI setup, download the workspace starter folder. Open that same
 folder as the main project in Codex or Claude Code for future tasks. Keep its
 short `AGENTS.md`; `CLAUDE.md` imports it with `@AGENTS.md` for Claude Code.
 Preserve existing folder instructions when adding these files to another project.
+To update a downloaded workspace folder, open Studio in desktop Chrome/Edge,
+choose the same workspace and client, then Update existing folder. Review the
+changes before applying; personal files and edits are preserved and backups
+stay locally. Older starter folders are supported. See UPDATE.md in newer kits.
+This folder updater is separate from the installed plugin update controls above.
 Plugin installation makes the skill available; it does not inject workspace
 instructions into every unrelated task or automatically select a workspace.
 
@@ -75,4 +80,4 @@ Setup references:
 - [Claude Code MCP and OAuth](https://code.claude.com/docs/en/mcp)
 - [Claude Code project instructions](https://code.claude.com/docs/en/memory)
 
-Skill version: 4.16.0.
+Skill version: 4.17.0.
