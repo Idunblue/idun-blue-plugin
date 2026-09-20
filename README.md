@@ -1,6 +1,6 @@
 # Idun Blue for Claude Code and Codex
 
-Installs the Idun Blue operating manual as a skill and connects the live MCP
+Installs a small, stable Idun Blue entry skill and connects the live MCP
 server (https://api.idun.blue/mcp). The package contains no credentials. Sign in to Idun
 through the client's browser-based OAuth flow; never paste keys into a chat.
 Generated from the server; maintainers run
@@ -48,11 +48,15 @@ In Studio's own-AI setup, download the workspace starter folder. Open that same
 folder as the main project in Codex or Claude Code for future tasks. Keep its
 short `AGENTS.md`; `CLAUDE.md` imports it with `@AGENTS.md` for Claude Code.
 Preserve existing folder instructions when adding these files to another project.
-To update a downloaded workspace folder, open Studio in desktop Chrome/Edge,
-choose the same workspace and client, then Update existing folder. Review the
-changes before applying; personal files and edits are preserved and backups
-stay locally. Older starter folders are supported. See UPDATE.md in newer kits.
-This folder updater is separate from the installed plugin update controls above.
+The project connection is bound to that workspace. Supported, trusted local
+clients fetch a small current context before each prompt through a read-only MCP
+hook; the project instructions remain the fallback when hooks are unavailable.
+Approve the project and hook in the client when asked. No prompts, transcripts
+or local files are passed by the hook. Ordinary work needs no folder update.
+For an older setup, recovery or an optional reference refresh, open Studio in
+desktop Chrome/Edge, choose the same workspace and client, then Advanced →
+Update existing folder. Review the changes; personal edits are preserved and
+backups stay locally. See UPDATE.md. This is separate from plugin updates.
 Plugin installation makes the skill available; it does not inject workspace
 instructions into every unrelated task or automatically select a workspace.
 
@@ -61,7 +65,14 @@ live rules and contracts it returns. Keep the same workspace on OAuth calls
 that support the argument; bound key/JWT clients omit it and verify the returned
 workspace. Resume observed project/operation IDs before writing again; never
 create replacements or replay an uncertain change merely because a chat ended.
-The installed manual is a versioned snapshot and still uses context when read.
+The installed entry skill loads current rules through idun_start. Ordinary
+server documentation changes need no plugin update. A local reference snapshot
+still uses context when read and never overrides current contracts.
+
+For a workspace-isolated connection, use Studio's generated project setup.
+Its workspace-specific OAuth resource prevents switching to another workspace.
+This general plugin can reach the workspaces allowed by its login; instructions
+alone do not turn that broader credential into a workspace-bound credential.
 
 For Claude or ChatGPT web projects, copy the workspace prompt into the project's
 instructions once and connect Idun separately. Uploading a local AGENTS.md file
@@ -80,4 +91,4 @@ Setup references:
 - [Claude Code MCP and OAuth](https://code.claude.com/docs/en/mcp)
 - [Claude Code project instructions](https://code.claude.com/docs/en/memory)
 
-Skill version: 4.17.0.
+Skill version: 4.18.0.

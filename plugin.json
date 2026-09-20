@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "idun-blue",
-  "version": "4.17.0",
-  "description": "Operate one creator’s Idun Blue workspace — courses, pages, offers, email — through the live MCP server, with the operating manual installed as a skill.",
+  "version": "4.18.0",
+  "description": "Operate an Idun Blue creator workspace through live MCP contracts and a small, stable entry skill. For an isolated workspace connection, use the project setup in Studio.",
   "author": {
     "name": "Idunblue AB",
     "url": "https://idun.blue"
@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "Idun Blue",
         "shortDescription": "Operate an Idun Blue creator workspace",
-        "longDescription": "Courses, pages, offers, email sequences and launches in one creator’s Idun Blue workspace, through the live MCP server, with the operating manual installed as a skill.",
+        "longDescription": "Courses, pages, offers, email sequences and launches through current Idun Blue MCP contracts. Studio supplies project setups with a connection bound to one workspace.",
         "developerName": "Idunblue AB",
         "category": "Productivity",
         "capabilities": [
