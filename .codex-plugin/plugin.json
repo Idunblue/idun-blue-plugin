@@ -1,6 +1,6 @@
 {
   "name": "idun-blue",
-  "version": "4.18.0",
+  "version": "4.19.0",
   "description": "Operate an Idun Blue creator workspace through live MCP contracts and a small, stable entry skill. For an isolated workspace connection, use the project setup in Studio.",
   "author": {
     "name": "Idunblue AB",

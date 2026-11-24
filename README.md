@@ -91,4 +91,4 @@ Setup references:
 - [Claude Code MCP and OAuth](https://code.claude.com/docs/en/mcp)
 - [Claude Code project instructions](https://code.claude.com/docs/en/memory)
 
-Skill version: 4.18.0.
+Skill version: 4.19.0.
